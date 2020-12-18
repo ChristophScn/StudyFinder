@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+
+* {
+    box-sizing: border-box; /* include margin, border, and padding in size */
+    font-family: "Lucida Sans", sans-serif;
+}
+
+.flex-container {
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-wrap: wrap; /* Safari 6.1+ */
+    flex-wrap: wrap;
+}
+
+.header {
+    font-size: 36pt;
+    font-weight: bold;
+    background-color: #f1f1f1;
+    color: #000000;
+    padding: 15px;
+    display: -webkit-flex; /* Safari */
+    -webkit-justify-content: center; /* Safari 6.1+ */
+    display: flex;
+    justify-content: center;
+	text-align: center;
+}
+
+.logo {
+    font-size: 30pt;
+    font-weight: bold;
+    font-family: Courier New;
+    color: #4f99df;
+    height: 100px;
+    justify-content: center;
+    align-items: center;
+    display: -webkit-flex; /* Safari */
+    -webkit-justify-content: center; /* Safari 6.1+ */
+    display: flex;
+    justify-content: center;
+    border: 3px solid #4f99df;
+    margin-top: 6px;
+    margin-bottom: 6px;
+}
+
+.menu ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    font-size: 16pt;
+}
+
+.menu li {
+    padding: 8px;
+    border-style:solid;
+    border-color:#000000;
+    background-color: #ffffff;
+    color: #000000;
+}
+
+.menu li:hover {
+    background-color: #4f99df;
+}
+
+.content {
+    padding-left: 20px;
+    padding-right: 20px;
+	text-align: center;
+	color: #000000;
+}
+
+.aside {
+    background-color: #e2f0e2;
+    padding: 15px;
+    color: #ffffff;
+    text-align: center;
+    font-size: 14pt;
+}
+
+.aside > div {
+    font-size: 24pt;
+    font-weight: bold;
+    height: 100px;
+    padding: 8px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    background-color :#008000;
+    color: #f1f1f1;
+}
+
+.footer {
+    background-color: #f1f1f1;
+    color: #000000;
+    text-align: center;
+    font-size: 12px;
+    padding: 5px;
+}
+
+/* Phones: */
+.phone-12-cols {width: 100%;}
+
+/* Desktop: */
+@media only screen and (min-width: 750px) {
+    .desktop-1-cols {width: 8.33%;}
+    .desktop-2-cols {width: 16.66%;}
+    .desktop-3-cols {width: 25%;}
+    .desktop-4-cols {width: 33.33%;}
+    .desktop-5-cols {width: 41.66%;}
+    .desktop-6-cols {width: 50%;}
+    .desktop-7-cols {width: 58.33%;}
+    .desktop-8-cols {width: 66.66%;}
+    .desktop-9-cols {width: 75%;}
+    .desktop-10-cols {width: 83.33%;}
+    .desktop-11-cols {width: 91.66%;}
+    .desktop-12-cols {width: 100%;}
+}
+
+table{
+	margin: 0 auto;
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+td, th {
+    border: 1px solid #dddddd;
+    text-align: center;
+    padding: 16px;
+}
+
+tr:nth-child(even) {
+    background-color: #dddddd;
+}
+
+li{
+	text-align: center;
+}
+
+
+
+</style>
+
+<script>
+                               
+	function onGroupClick(id) {
+        alert(id);
+	}
+
+</script>
+
+</head>
+<body>
+
+<div class="header">Reiter</div>
+
+<div class="flex-container">
+
+    <div class="menu desktop-2-cols phone-4-cols">
+        
+    </div>
+
+    <div class="menu desktop-3-cols phone-12-cols">
+        <h1>Chats</h1>
+        <ul>
+        <li onclick="onGroupClick(1)">Gruppe: Programmieren</li>
+        <li onclick="onGroupClick(2)">IT-Sec Hausaufgabe</li>
+        <li onclick="onGroupClick(3)">Study Buddies</li>
+		</ul>
+    </div>
+
+    <div class="content desktop-5-cols phone-12-cols" id="calendar">
+        <h1>Termine</h1>
+       <p  style= "font-size: 200%">Keine Termine diese Woche</p>
+    </div>
+
+</div>
+
+<div class="footer">
+    <p> 'Study Finder' ist schon ziemlich nice ~Aristoteles</p>
+</div>
+
+</body>
+</html>

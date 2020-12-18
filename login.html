@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+body {font-family: Arial, Helvetica, sans-serif;}
+
+input[type=text], input[type=password] {
+  padding: 12px 20px;
+   width: 25%;
+  margin: 8px 0;
+   left:37%;
+  display: inline-block;
+  box-sizing: border-box;
+  position:relative;
+  border: 1px solid #ccc;
+ 
+}
+
+button {
+  color: black;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 10%;
+  border-style:solid;
+border-color:#000000;
+background-color: #ffffff;
+font-size:20px;
+}
+
+button:hover {
+  opacity: 0.8;
+}
+
+
+.imgcontainer {
+  text-align: center;
+  margin: 24px 0 12px 0;
+}
+
+img.studyfinder {
+  width: 20%;
+}
+
+.container {
+  padding: 16px;
+}
+
+</style>
+</head>
+<body>
+
+<form action="/action_page.php" method="post">
+  <div class="imgcontainer">
+    <img src="cooltext.png" alt="sf" class="studyfinder">
+  </div>
+
+  <div class="container" style="display:flex; flex-direction:column;">
+    
+    <div class = "container" style="display:flex; flex-direction:column;">
+        <label for="psw" style="position:relative; left:35%"><b>Nutzername</b></label>
+        <input style="position:relative; left: 35%;" type="text" placeholder="Nutzername eingeben" name="uname" required>
+    </div>
+    <div class = "container" style="display:flex; flex-direction:column;">
+         <label for="uname" style="position:relative; left:35%;"><b>Passwort</b></label>
+        <input style="position:relative; left: 35%;" type="password" placeholder="Passwort eingeben" name="psw" required>
+    </div>
+
+    <button type="submit" style="position:relative; left:90%"> Login</button>
+  </div>
+</form>
+
+</body>
+</html>
