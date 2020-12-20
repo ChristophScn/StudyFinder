@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+
+    <script>
+      function onGroupClick(id) {
+        alert(id);
+      }
+    </script>
+  </head>
+
+  <body>
+
+    <div class="header">Reiter</div>
+
+    <div class="flex-container">
+      <div class="menu desktop-2-cols phone-0-cols"></div>
+
+      <div class="menu desktop-8-cols phone-12-cols">
+        <h1>Meine Gruppen</h1>
+        <ul>
+          <li onclick="onGroupClick(1)">Gruppe: Programmieren</li>
+          <li onclick="onGroupClick(2)">IT-Sec Hausaufgabe</li>
+          <li onclick="onGroupClick(3)">Study Buddies</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer">
+      <p> 'Study Finder' ist schon ziemlich nice ~Aristoteles</p>
+    </div>
+
+  </body>
+</html>
