@@ -1,3 +1,3 @@
 # StudyFinder
 
-A study group finder
+A study group finder. 
