@@ -6,6 +6,9 @@
     <script src="groups.js"></script>
     <script>
       
+      //saves the currently displayed group. Null if no Popup visible.
+      var currentGroup = null;
+      
       
       function filter_list(){
         var list = document.getElementById("search_list");
@@ -30,34 +33,80 @@
           }
         }
         
-        if(list.innerHTML == ''){
+        if( list.innerHTML == ''){
           list.appendChild(document.createTextNode('Keine Suchergebnisse gefunden'));
         }
       }
       
-      function onGroupClicked(id){
-        console.log(id);
+      
+      
+      
+      function onGroupClicked(name){
+        
+        var group = findGroupByName(name)
+        // console.log(group);
+        currentGroup = group;
+        if(group == null) return;
+        
+        
+        //display clicked group in modal
+        var title = document.getElementById("modal_title");
+        title.innerHTML = "Gruppe: " + group.name;
+        
+        var desc = document.getElementById("modal_desc");
+        desc.innerHTML = group.description;
+        
+        var member = document.getElementById("modal_member");
+        member.innerHTML = "Mitglieder (" + group.members.length + "/" + group.max + ")";
+        
+        var list = document.getElementById("modal_list");
+        list.innerHTML = "";
+        for(var i = 0; i < group.members.length; i++){
+          var item = document.createElement('li');
+          item.innerHTML = group.members[i];
+          item.style = "text-align: start;"
+          list.appendChild(item);
+        }
         
         //show modal
         var modal = document.getElementById("modal");
         modal.style.display = "block";
       }
       
-      function showAlert(id) {
-        alert(id);
+      
+      
+      function showAlert(text) {
+        alert(text);
       }
+      
+      
+      
+      function sendJoinRequest(){
+        
+        //show alert
+        var text = "Beitrittsanfrage erfolgreich versendet: \n" + currentGroup.name;
+        showAlert(text);
+        
+        //close popup
+        closeModal();
+      }
+      
       
       function closeModal(){
         var modal = document.getElementById("modal");
         modal.style.display = "none";
+        currentGroup = null;
       }
+      
+      
       
       window.onload = function(){
         
         // When the user clicks anywhere outside of the modal, close it
         window.onclick = function(event) {
+          var modal = document.getElementById("modal");
           if (event.target == modal) {
-            modal.style.display = "none";
+            closeModal();
           }
         }
       }
@@ -73,14 +122,22 @@
 
     <div class="header">Reiter</div>
     
-    <label style="position:relative; left:35%"><h1>Suche eine Gruppe: </h1></label>
-    <input style="position:relative; left: 35%;" type="text" placeholder="Suchbegriff eingeben" name="uname" id ="input_field">
-    <button onClick="filter_list()"  style="position:relative; left:40%">Suche</button>
+    
     
     
     <div class="flex-container">
+    
       <div class="menu desktop-2-cols phone-0-cols"></div>
+      
       <div class="menu desktop-8-cols phone-12-cols">
+      
+        <label style="position:relative; left: 35%;"><h1>Suche eine Gruppe: </h1></label>
+        
+        <div>
+          <input style="position:relative; left: 30%; width: 35%" type="text" placeholder="Suchbegriff eingeben" id ="input_field">
+          <button onClick="filter_list()" style="position:relative; left:35%">Suche</button>
+        </div>
+        
     
         <ul id="search_list">
        
@@ -91,15 +148,22 @@
     
     
     <div class="footer">
-      <p> 'Study Finder' ist schon ziemlich nice ~Aristoteles</p>
+      <p> 'Study Finder' ist schon ziemlich nice ~ Aristoteles</p>
     </div>
+    
     
     <!-- Modal -->
     <div id="modal" class="modal">
       
       <div class="modal-content">
         <span onclick="closeModal()" id="modalCloseButton" class="close">&times;</span>
-        <p>Some text in the Modal..</p>
+        <h2 id="modal_title"></h2>
+        <p id="modal_desc"></p>
+        <h4 id="modal_member"><h4>
+        <ul id="modal_list">
+          <li style="text-align: start;"></li>
+        </ul>
+        <button onclick="sendJoinRequest()">Beitrittsanfrage senden</button>
       </div>
     </div>
     
