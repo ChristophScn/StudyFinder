@@ -1,3 +1,4 @@
+
 * {
     box-sizing: border-box; /* include margin, border, and padding in size */
     font-family: "Lucida Sans", sans-serif;
@@ -147,7 +148,16 @@ input[type=text], input[type=password] {
 }
 
 button {
-  font-size:20px;
+  color: black;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 10%;
+  border-style:solid;
+border-color:#000000;
+background-color: #ffffff;
+font-size:20px;
 }
 
 button:hover {
