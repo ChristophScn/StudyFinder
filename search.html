@@ -3,25 +3,13 @@
 <html>
   <head>
     <link rel="stylesheet" type="text/css" href="styles.css">
-
+    <script src="groups.js"></script>
     <script>
       
-      var global_groups = [
-        "Technisches Englisch",
-        "Spanisch A1",
-        "IT-Sicherheit",
-        "Spanisch A2",
-        "Mathe fuer Psychologen",
-        "Human-Computer-Interaction Lerngruppe",
-        "StudyBuddies",
-        "Lazy Students",
-        "Gruppe: Programmieren",
-        "IT-Sec Hausaufgabe",
-      ];
       
       function filter_list(){
         var list = document.getElementById("search_list");
-        var arr = this.global_groups.sort();
+        var arr = this.global_groups.sort(compareGroups);
         var name = document.getElementById("input_field").value;
         
         list.innerHTML = "";
@@ -30,11 +18,11 @@
         
         for (var i = 0; i < global_groups.length; i++){
           
-          if(arr[i].includes(name)){
+          if(arr[i].name.includes(name)){
             
             var item = document.createElement('li');
-            item.innerHTML = arr[i];
-            item.id = arr[i];
+            item.innerHTML = arr[i].name;
+            item.id = arr[i].name;
             item.onclick = function() {onGroupClicked(this.id);};
             
             list.appendChild(item);
