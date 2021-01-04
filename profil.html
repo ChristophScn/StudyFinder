@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>profil</title>
+    <link href="profil.css" rel="stylesheet">
+    <script defer src="profil.js"></script>
+</head>
+<body>
+<div class="header">
+    <h1>mein Profil</h1>
+</div>
+<div class="flex-container" id="profile">
+    <div class="left desktop-2-cols phone-4-cols" >
+        <div><img class="img" src="profil.png" alt="avatar"></div>
+        <div id="firstname_prof">firstname</div>
+        <div id="lastname_prof">lastname</div>
+    </div>
+    <table class="content desktop-5-cols phone-12-cols">
+        <tr>
+            <td>Studiengang:</td>
+            <td><div id="study_prof">studiengang</div></td>
+        </tr>
+        <tr>
+            <td>Semester:</td>
+            <td><div id="semester_prof">semester</div></td>
+        </tr>
+        <tr>
+            <td>interessen:</td>
+            <td><div id="interests_prof">dies <br>das und jenes</div></td>
+        </tr>
+    </table>
+    <div class="button desktop-3-cols phone-12-cols">
+        <div><button data-modal-target="#modal" id="openButton">ändern</button></div>
+    </div>
+</div>
+
+<div class="modal" id="modal">
+    <div class="modal-header">
+        <div class="title">ändern</div>
+        <button data-close-button class="close-button">&times;</button>
+    </div>
+    <div class="modal-body" id="profileForm">
+        <form id="myForm">
+            <div id="firstname">
+                <label>Vorname:</label>
+                <input id="firstname_mod" type="text" name="firstname" value=""/>
+            </div>
+
+            <div id="lastname">
+                <label>Nachname:</label>
+                <input id="lastname_mod" type="text" name="lastname" />
+            </div>
+
+            <div id="study">
+                <label>Studiengang:</label>
+                <input id="study_mod" type="text" name="study" />
+            </div>
+
+            <div id="semester">
+                <label>Semester:</label>
+                <input id="semester_mod" type="text" name="semester"/>
+            </div>
+
+            <div id="interests">
+                <label>Interessen:</label>
+                <textarea id="interests_mod" name="interests"></textarea>
+            </div>
+
+            <input data-close-button class="close-button" type="button" id="saveButton" value="SAVE" />
+        </form>
+    </div>
+</div>
+<div id="overlay"></div>
+</body>
+</html>
