@@ -26,9 +26,8 @@ a:hover{
     background-color: #a1a1a1;
 }
 
-a:active{
-    background-color: #a1a1a1;
-    text-decoration:none;
+.menueItem:focus{
+    background-color: #5e5e5e;
 }
 
 .footer {
