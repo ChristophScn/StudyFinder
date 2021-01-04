@@ -146,7 +146,6 @@ textarea{
 
 .img {
 	width: 50%;
-	hight: 50%;
 }
 
 * {
@@ -155,7 +154,7 @@ textarea{
 }
 
 /* Phones: */
-.phone-0-cols {width: 0%;}
+.phone-0-cols {width: 0;}
 .phone-12-cols {width: 100%;}
 
 /* Desktop: */
@@ -181,8 +180,13 @@ table{
   width: 100%;
 }
 
-td, th {
-  text-align: center;
+th {
+  text-align: right;
+  padding: 16px;
+}
+
+td {
+  text-align: left;
   padding: 16px;
 }
 

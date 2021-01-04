@@ -22,15 +22,15 @@
     <li>
     <table class="content desktop-5-cols phone-12-cols">
         <tr>
-            <td>Studiengang:</td>
+            <th>Studiengang:</th>
             <td><div id="study_prof">studiengang</div></td>
         </tr>
         <tr>
-            <td>Semester:</td>
+            <th>Semester:</th>
             <td><div id="semester_prof">semester</div></td>
         </tr>
         <tr>
-            <td>interessen:</td>
+            <th>interessen:</th>
             <td><div id="interests_prof">dies <br>das und jenes</div></td>
         </tr>
     </table>
@@ -48,31 +48,32 @@
     <div class="modal-body" id="profileForm">
         <form id="myForm">
             <div id="firstname">
-                <label>Vorname:</label>
+                <label for="firstname_mod">Vorname:</label>
                 <input id="firstname_mod" type="text" name="firstname" value=""/>
             </div>
 
             <div id="lastname">
-                <label>Nachname:</label>
+                <label for="lastname_mod">Nachname:</label>
                 <input id="lastname_mod" type="text" name="lastname" />
             </div>
 
             <div id="study">
-                <label>Studiengang:</label>
+                <label for="study_mod">Studiengang:</label>
                 <input id="study_mod" type="text" name="study" />
             </div>
 
             <div id="semester">
-                <label>Semester:</label>
+                <label for="semester_mod">Semester:</label>
                 <input id="semester_mod" type="text" name="semester"/>
             </div>
 
             <div id="interests">
-                <label>Interessen:</label>
+                <label for="interests_mod">Interessen:</label>
                 <textarea id="interests_mod" name="interests"></textarea>
             </div>
-
+            <div class="button">
             <input data-close-button class="close-button" type="button" id="saveButton" value="SAVE" />
+            </div>
         </form>
     </div>
 </div>
