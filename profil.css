@@ -140,8 +140,7 @@ textarea{
 .button {
   justify-content: flex-end;
   align-self: flex-end;
-  background-color: yellow;
-
+  align-items: end;
 }
 
 .img {
