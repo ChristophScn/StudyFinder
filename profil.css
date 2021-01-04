@@ -98,6 +98,7 @@ textarea{
   display: inline-flex;
   -webkit-flex-wrap: wrap; /* Safari 6.1+ */
   flex-wrap: wrap;
+  justify-content: center;
 }
 
 .header {
@@ -105,7 +106,6 @@ textarea{
   flex-flow: row wrap;
   text-align: center;
   font-weight: bold;
-  background-color: #f1f1f1;
   display: -webkit-flex; /* Safari */
   -webkit-justify-content: center; /* Safari 6.1+ */
   display: flex;
@@ -141,6 +141,7 @@ textarea{
   justify-content: flex-end;
   align-self: flex-end;
   background-color: yellow;
+
 }
 
 .img {
@@ -183,6 +184,10 @@ table{
 td, th {
   text-align: center;
   padding: 16px;
+}
+
+li {
+  list-style: none;
 }
 
 button {

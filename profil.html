@@ -10,14 +10,16 @@
 </head>
 <body>
 <div class="header">
-    <h1>mein Profil</h1>
+    <h1>Mein Profil</h1>
 </div>
-<div class="flex-container" id="profile">
-    <div class="left desktop-2-cols phone-4-cols" >
+<ul class="flex-container" id="profile">
+
+    <li class="left desktop-3-cols phone-4-cols" >
         <div><img class="img" src="profil.png" alt="avatar"></div>
         <div id="firstname_prof">firstname</div>
         <div id="lastname_prof">lastname</div>
-    </div>
+    </li>
+    <li>
     <table class="content desktop-5-cols phone-12-cols">
         <tr>
             <td>Studiengang:</td>
@@ -32,10 +34,11 @@
             <td><div id="interests_prof">dies <br>das und jenes</div></td>
         </tr>
     </table>
-    <div class="button desktop-3-cols phone-12-cols">
-        <div><button data-modal-target="#modal" id="openButton">ändern</button></div>
-    </div>
-</div>
+    </li>
+    <li class="button desktop-2-cols phone-12-cols">
+        <button data-modal-target="#modal" id="openButton">ändern</button>
+    </li>
+</ul>
 
 <div class="modal" id="modal">
     <div class="modal-header">
