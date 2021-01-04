@@ -141,6 +141,10 @@ textarea{
   align-items: end;
 }
 
+.lableArea {
+  float: left;
+}
+
 .img {
 	width: 50%;
 }
