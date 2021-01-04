@@ -9,18 +9,18 @@
     <script defer src="profil.js"></script>
 </head>
 <body>
-<div class="header">
+<div class="header-container">
     <h1>Mein Profil</h1>
 </div>
 <ul class="flex-container" id="profile">
 
-    <li class="left desktop-3-cols phone-4-cols" >
+    <li class="left-container desktop-3-cols phone-4-cols" >
         <div><img class="img" src="profil.png" alt="avatar"></div>
         <div id="firstname_prof">firstname</div>
         <div id="lastname_prof">lastname</div>
     </li>
     <li>
-    <table class="content desktop-5-cols phone-12-cols">
+    <table class="content-container desktop-5-cols phone-12-cols">
         <tr>
             <th>Studiengang:</th>
             <td><div id="study_prof">studiengang</div></td>
@@ -35,7 +35,7 @@
         </tr>
     </table>
     </li>
-    <li class="button desktop-2-cols phone-12-cols">
+    <li class="button-container desktop-2-cols phone-12-cols">
         <button data-modal-target="#modal" id="openButton">ändern</button>
     </li>
 </ul>
@@ -71,7 +71,7 @@
                 <label for="interests_mod">Interessen:</label>
                 <textarea id="interests_mod" name="interests"></textarea>
             </div>
-            <div class="button">
+            <div class="button-container">
             <input data-close-button class="close-button" type="button" id="saveButton" value="SAVE" />
             </div>
         </form>
