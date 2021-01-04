@@ -134,6 +134,8 @@ textarea{
 }
 
 .button-container {
+  flex-direction: column;
+  display: flex;
   justify-content: flex-end;
   align-self: flex-end;
   align-items: end;
@@ -191,6 +193,7 @@ li {
 
 button {
   font-size:20px;
+  align-self: flex-end;
 }
 
 button:hover {
