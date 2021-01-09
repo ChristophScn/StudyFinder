@@ -1,18 +1,7 @@
 const openModalButtons = document.querySelectorAll('[data-modal-target]');
 const closeModalButtons = document.querySelectorAll('[data-close-button]');
 const overlay = document.getElementById('overlay');
-const firstname_profile = document.getElementById('firstname_prof');
-const lastname_profile = document.getElementById('lastname_prof');
-const study_profile = document.getElementById('study_prof');
-const semester_profile = document.getElementById('semester_prof');
-const interests_profile = document.getElementById('interests_prof');
-const firstname_input = document.getElementById('firstname_mod');
-const lastname_input = document.getElementById('lastname_mod');
-const study_input = document.getElementById('study_mod');
-const semester_input = document.getElementById('semester_mod');
-const interests_input = document.getElementById('interests_mod');
 
-var list = document.getElementById("list")
 var form = document.getElementById("myForm");
 var formDivs = form.getElementsByTagName("div");
 var profile = document.getElementById("profile")
@@ -81,11 +70,11 @@ function cleanProfileDivs() {
 }
 
 function init(i){
-    if(i === 0)    return "Vorname";
-    if(i === 1)    return "Nachname";
-    if(i === 2)    return "Studiengang";
-    if(i === 3)    return "Semester";
-    if(i === 4)    return "dies, das";
+    if(i === 0)    return "Alice";
+    if(i === 1)    return "Wonderland";
+    if(i === 2)    return "unbekannt";
+    if(i === 3)    return "unbekannt";
+    if(i === 4)    return "dies, das, jenes";
 }
 
 function supports_html5_storage() {
