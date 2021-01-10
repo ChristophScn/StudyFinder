@@ -90,7 +90,12 @@ function saveData() {
         localStorage["firstname"] = form.firstname.value;
         localStorage["lastname"] = form.lastname.value;
         localStorage["study"] = form.study.value;
-        localStorage["semester"] = form.semester.value;
+        let isnum = /^\d+$/.test(form.semester.value);
+        if(isnum){
+            localStorage["semester"] = form.semester.value;
+        }
+        else
+            alert("Du kannst als Semester nur eine natürliche Zahl eingeben");
         localStorage["interests"] = form.interests.value;
     } catch (e) {
         alert("Could not save data");
