@@ -14,23 +14,37 @@
         var list = document.getElementById("search_list");
         var arr = this.global_groups.sort(compareGroups);
         var name = document.getElementById("input_field").value;
+        name = name.toLowerCase();
         
+        //reset list
         list.innerHTML = "";
         
-        console.log("filter: " + name);
         
-        for (var i = 0; i < global_groups.length; i++){
+        //split into tokens
+        var tokens = name.split();
+        console.log(tokens);
+        
+        
+        for (var i = 0; i < arr.length; i++){
           
-          if(arr[i].name.includes(name)){
-            
+          //check if all tokens fit
+          var fitting = true;
+          for(var t = 0; t < tokens.length; t++){
+            if (!arr[i].name.toLowerCase().includes(tokens[t]) 
+                  && !arr[i].description.toLowerCase().includes(tokens[t])){
+               fitting = false;
+            }
+          }
+          
+          //add to list
+          if(fitting){
             var item = document.createElement('li');
             item.innerHTML = arr[i].name;
             item.id = arr[i].name;
             item.onclick = function() {onGroupClicked(this.id);};
-            
             list.appendChild(item);
-            
           }
+          
         }
         
         if( list.innerHTML == ''){
