@@ -5,7 +5,7 @@ body{
 
 .menueItem{
     float:left; 
-    width:19%;
+    width:18%;
     height: 7%;
     background-color: #f1f1f1;
     text-align: center;
@@ -13,11 +13,11 @@ body{
 
 #logoutButton{
     float:left; 
-    width:5%;
+    width:10%;
     height: 7%;
-    background-color: #5e5e5e;
+    background-color: #f1f1f1;
     text-align: center;
-    border:none
+    border:none;
     font-weight: bold;
     font-size: 24px;
 }
@@ -27,26 +27,15 @@ body{
 }
 
 #logoutButton:hover{
-     background-color: #3e3e3e;
+     background-color: #5e5e5e;
 }
 
 .menueItem:hover{
-    background-color: #a1a1a1;
+    background-color: #5e5e5e;
 }
 
 a{
-    text-decoration: none;
     color:#000;
-    width:100%;
-    height: 100%;
-}
-
-a:hover{
-    background-color: #a1a1a1;
-}
-
-.menueItem:focus{
-    background-color: #5e5e5e;
 }
 
 .footer {

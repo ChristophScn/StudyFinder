@@ -4,35 +4,52 @@
 
         </title>
         <link rel="stylesheet" type="text/css" href="css/index.css" ></link>
+        <script>
+            function setColor(id){
+                var x = document.getElementsByClassName('menueItem');
+                for(var i = 0; i < x.length; i++){
+                    x[i].style.background = '#f1f1f1';
+                }
+                document.getElementById(id).style.background = '#3e3e3e';
+            }
+        </script>
     </head>
     <body>
         <div>
             <!--Menüleiste-->
             <div>
                 <a href="homescreen.html" target="content">
-                    <div class="menueItem" tabindex="1">
-                        Home
+                    <div id="home" onclick="setColor('home')" class="menueItem">
+                        <img src="./img/home.png" alt="home" style="height:30px"/>
+                        <div>Home</div>
                     </div>
                 </a>
                 <a href="search.html" target="content">
-                    <div class="menueItem" tabindex="2">
-                        Suche
+                    <div id="search" onclick="setColor('search')" class="menueItem">
+                        <img src="./img/search.png" alt="suche" style="height:30px"/>
+                        <div>Suche</div>
                     </div>
                 </a>
                 <a href="profil.html" target="content">
-                    <div class="menueItem" tabindex="3">Profil
-
+                    <div id="profile" onclick="setColor('profile')" class="menueItem">
+                        <img src="./img/profile.png" alt="Profil" style="height:30px"/>
+                        <div>Profil</div>
                     </div>
                 </a>                
                 
                 <a href="gruppen.html" target="content">
-                    <div class="menueItem" tabindex="4">
-                        Gruppen
+                    <div id="group" onclick="setColor('group')" class="menueItem">
+                        <img src="./img/group.png" alt="Gruppen" style="height:30px"/>
+                        <div>Gruppen</div>
                     </div>
                 </a>
                 
                 <a href="calender.html" target="content">
-                    <div class="menueItem" tabindex="5">Kalender</div>
+                    <div id="calendar" onclick="setColor('calendar')" class="menueItem">
+                        <img src="./img/calendar.png" alt="Kalender" style="height:30px"/>
+                        <div>Kalender</div>
+                    </div>
+
                 </a>
                 <form action="login.html">
                     <button type="submit" id="logoutButton">Logout</button>
