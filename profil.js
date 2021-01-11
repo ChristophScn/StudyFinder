@@ -31,7 +31,6 @@ closeModalButtons.forEach(button => {
 
 window.onload = function(){
     cleanProfileDivs();
-    console.log("here");
     if (supports_html5_storage) {
         loadUserData();
     }
@@ -102,11 +101,11 @@ function loadUserData() {
         key = formDivs[i].id;
         value = localStorage[key];
         input = formDivs[i].getElementsByTagName('input')[0];
-        if(input === undefined){
+        if(input == undefined){
             input = formDivs[i].getElementsByTagName('textarea')[0];
         }
         out = profileDivs[i];
-        if (value === 'undefined') {
+        if (value == undefined) {
             value = init(i);
         }
         input.value = value;
