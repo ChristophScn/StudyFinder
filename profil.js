@@ -2,10 +2,10 @@ const openModalButtons = document.querySelectorAll('[data-modal-target]');
 const closeModalButtons = document.querySelectorAll('[data-close-button]');
 const overlay = document.getElementById('overlay');
 
-var form = document.getElementById("myForm");
-var formDivs = form.getElementsByTagName("div");
-var profile = document.getElementById("profile")
-var profileDivs = profile.getElementsByTagName("div");
+const form = document.getElementById("myForm");
+const formDivs = form.getElementsByTagName("div");
+const profile = document.getElementById("profile");
+let profileDivs = profile.getElementsByTagName("div");
 
 
 openModalButtons.forEach(button => {
@@ -86,34 +86,35 @@ function supports_html5_storage() {
 
 function saveData() {
     try {
-        localStorage["firstname"] = form.firstname.value;
-        localStorage["lastname"] = form.lastname.value;
-        localStorage["study"] = form.study.value;
+        if(form.firstname.value != '') localStorage["firstname"] = form.firstname.value;
+        if(form.lastname.value != '') localStorage["lastname"] = form.lastname.value;
+        if(form.study.value != '') localStorage["study"] = form.study.value;
         let isnum = /^\d+$/.test(form.semester.value);
         if(isnum){
             localStorage["semester"] = form.semester.value;
         }
         else
             alert("Du kannst als Semester nur eine natürliche Zahl eingeben");
-        localStorage["interests"] = form.interests.value;
+        if(form.interests.value != '') localStorage["interests"] = form.interests.value;
     } catch (e) {
         alert("Could not save data");
     }
 }
 
 function loadUserData() {
-    for (i=0; i<formDivs.length; i++){
+    let input;
+    for (i = 0; i < formDivs.length; i++) {
         key = formDivs[i].id;
         value = localStorage[key];
         input = formDivs[i].getElementsByTagName('input')[0];
-        if(input == undefined){
+        if (input == undefined) {
             input = formDivs[i].getElementsByTagName('textarea')[0];
         }
         out = profileDivs[i];
         if (value == undefined) {
             value = init(i);
         }
-        input.value = value;
+        input.placeholder = value;
         out.innerHTML = value;
     }
 }
