@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="../css/styles.css">
+    <script src="../js/search.js"></script>
+    <script src="../js/groups.js"></script>
+  </head>
+
+  <body>
+
+    <div class="flex-container">
+      <div class="menu desktop-2-cols phone-0-cols"></div>
+
+      <div class="menu desktop-8-cols phone-12-cols">
+        <h1>Meine Gruppen</h1>
+        <ul>
+          <li onclick="onGroupClick(1)">Gruppe: Programmieren</li>
+          <li onclick="onGroupClick(1)">IT-Sec Hausaufgabe</li>
+          <li onclick="onGroupClick(1)">Study Buddies</li>
+        </ul>
+      </div>
+      <div class="menu desktop-2-cols phone-0-cols"></div>
+      <div class="menu desktop-2-cols phone-0-cols"></div>
+      <div id=request_div class="menu desktop-8-cols phone-12-cols">
+        <h1>Meine Beitrittsanfragen:</h1>
+        <ul id="gruppenAnfrage" style="position:relative; left:0%" id="request:list">
+          <li id="spanisch">
+                <div class="flex-container" onclick="onGroupClicked('Spanisch A1')">
+                  <div>5 / 6</div>
+                  <div style="flex-grow: 5;text-align: center">Spanisch A1</div>
+                  <div style="flex-grow: 5;text-align: end">
+                    <img src="../img/hci_request_sent.png" alt="home" style="height:30px"/>
+                  </div>
+                </div>
+          </li>
+        </ul>
+      </div>
+
+    </div>
+
+    <!-- Modal -->
+    <div id="modal_group" class="modal">
+      <div class="modal-content">
+        <span onclick="closeModal('modal_group')" id="modalCloseButton" class="close">&times;</span>
+        <h2 id="modal_group_title"></h2>
+        <p id="modal_group_desc"></p>
+        <h4 id="modal_group_member"></h4>
+        <ul id="modal_group_list">
+          <li style="text-align: start;"></li>
+        </ul>
+        <button onclick="sendUNJoinRequest()" style="width: auto;">Beitrittsanfrage stronieren</button>
+      </div>
+    </div>
+
+    <div id="modal_not_implemented" class="modal">
+      <div class="modal-content">
+        <span onclick="closeModal('modal_not_implemented')" id="modalCloseButton" class="close">&times;</span>
+        <h2 id="modal_title">This function is not implemented</h2>
+        <p id="modal_title2">this is what it may look like:</p>
+        <p id="modal_title3">for more information: see wiki</p>
+        <div id="modal_content">
+          <img src="../img/hci_Gruppen_ansicht.png" alt="home" class="img-responsive" width="100%" height="auto"/>
+        </div>
+      </div>
+    </div>
+
+
+
+  </body>
+<script>
+
+  function onGroupClick() {
+    //show modal
+    var modal = document.getElementById("modal_not_implemented");
+    modal.style.display = "block";
+  }
+
+  function sendUNJoinRequest() {
+    var retVal = confirm(unescape("M%F6chtest du die Anfrage zur%FCckziehen?"));
+    if( retVal == true ) {
+      var list = document.getElementById("gruppenAnfrage")
+      document.getElementById("spanisch").remove()
+      var item = document.createElement('li');
+      item.innerText = "du hast keine Anfragen gestellt"
+      list.appendChild(item)
+      document.getElementById("request_div").classList.add("men")
+      document.getElementById("request_div").classList.remove("menu")
+      closeModal('modal_group');
+      return true;
+    } else {
+
+      closeModal('modal_group');
+      return false;
+    }
+  }
+</script>
+</html>

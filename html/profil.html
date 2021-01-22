@@ -2,11 +2,11 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="ie=edge" http-equiv="X-UA-Compatible">
     <title>profil</title>
-    <link href="profil.css" rel="stylesheet">
-    <script defer src="profil.js"></script>
+    <link href="../css/profil.css" rel="stylesheet">
+    <script defer src="../js/profil.js"></script>
 </head>
 <body>
 <div class="header-container">
@@ -15,25 +15,25 @@
 <ul class="flex-container" id="profile">
 
     <li class="left-container desktop-3-cols phone-4-cols" >
-        <div><img class="img" src="alice.jfif" alt="avatar"></div>
+        <div><img alt="avatar" class="img" src="../img/alice.jfif"></div>
         <div id="firstname_prof">firstname</div>
         <div id="lastname_prof">lastname</div>
     </li>
     <li>
-    <table class="content-container desktop-5-cols phone-12-cols">
-        <tr>
-            <th>Studiengang:</th>
-            <td><div id="study_prof">studiengang</div></td>
-        </tr>
-        <tr>
-            <th>Semester:</th>
-            <td><div id="semester_prof">semester</div></td>
-        </tr>
-        <tr>
-            <th>Interessen:</th>
-            <td><div id="interests_prof">dies <br>das und jenes</div></td>
-        </tr>
-    </table>
+        <table class="content-container desktop-5-cols phone-12-cols">
+            <tr>
+                <th>Studiengang:</th>
+                <td><div id="study_prof">studiengang</div></td>
+            </tr>
+            <tr>
+                <th>Semester:</th>
+                <td><div id="semester_prof">semester</div></td>
+            </tr>
+            <tr>
+                <th>Interessen:</th>
+                <td><div id="interests_prof">dies <br>das und jenes</div></td>
+            </tr>
+        </table>
     </li>
     <li class="button-container desktop-2-cols phone-12-cols">
         <button data-modal-target="#modal" id="openButton">ändern</button>
@@ -43,28 +43,28 @@
 <div class="modal" id="modal">
     <div class="modal-header">
         <div class="title">ändern</div>
-        <button data-close-button class="close-button">&times;</button>
+        <button class="close-button" data-close-button>&times;</button>
     </div>
     <div class="modal-body" id="profileForm">
         <form id="myForm">
             <div id="firstname">
                 <label for="firstname_mod">Vorname:</label>
-                <input id="firstname_mod" type="text" name="firstname" value=""/>
+                <input id="firstname_mod" name="firstname" type="text" value=""/>
             </div>
 
             <div id="lastname">
                 <label for="lastname_mod">Nachname:</label>
-                <input id="lastname_mod" type="text" name="lastname" />
+                <input id="lastname_mod" name="lastname" type="text" />
             </div>
 
             <div id="study">
                 <label for="study_mod">Studiengang:</label>
-                <input id="study_mod" type="text" name="study" />
+                <input id="study_mod" name="study" type="text" />
             </div>
 
             <div id="semester">
                 <label for="semester_mod">Semester:</label>
-                <input id="semester_mod" type="text" name="semester"/>
+                <input id="semester_mod" name="semester" type="text"/>
             </div>
 
             <div id="interests">
@@ -72,7 +72,7 @@
                 <textarea id="interests_mod" name="interests"></textarea>
             </div>
             <div class="button-container">
-              <button data-close-button class="close-button" type="button" id="saveButton">speichern</button>
+                <button class="close-button" data-close-button id="saveButton" type="button">speichern</button>
             </div>
         </form>
     </div>

@@ -1,0 +1,64 @@
+<!-- Author: Yannik M. -->
+
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="../css/styles.css">
+    <script src="../js/groups.js"></script>
+    <script src="../js/search.js"></script>
+    
+  </head>
+  
+  <body>
+
+    <div class="flex-container">
+
+      <div class="menu desktop-2-cols phone-0-cols"></div>
+      <div class="menu desktop-8-cols phone-12-cols">
+      
+        <label style="position:relative; left: 0%;"><h1>Suche eine Gruppe: </h1></label>
+        
+        <div>
+          <input style="position:relative; left: 0%; width: 35%" type="text" placeholder="Suchbegriff eingeben" id ="input_field">
+          <button onClick="filter_list()" style="position:relative; left:5%; width: auto;">Suche</button>
+        </div>
+        
+    
+        <ul style="position:relative; left:0%" id="search_list"></ul>
+       
+      </div>
+      
+    </div>
+
+
+
+    
+    <!-- Modal for Groups-->
+    <div id="modal_group" class="modal">
+      
+      <div class="modal-content">
+        <span onclick="closeModal('modal_group')" id="modalCloseButton" class="close">&times;</span>
+        <h2 id="modal_group_title"></h2>
+        <p id="modal_group_desc"></p>
+        <h4 id="modal_group_member"></h4>
+        <ul id="modal_group_list">
+          <li style="text-align: start;"></li>
+        </ul>
+        <button onclick="sendJoinRequest('modal_group')" style="width: auto;">Beitrittsanfrage senden</button>
+      </div>
+    </div>
+    
+    <!-- Modal for Person -->
+    <div id="modal_person" class="modal">
+      
+      <div class="modal-content">
+        <span onclick="closeModal('modal_person')" id="modalCloseButton" class="close">&times;</span>
+        <h2 id="modal_person_title"></h2>
+        <p id="modal_person_studiengang"></p>
+        <p id="modal_person_semester"></p>
+        <p id="modal_person_interessen"></p>
+      </div>
+    </div>
+    
+    
+  </body>
+</html>
