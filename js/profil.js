@@ -93,7 +93,7 @@ function saveData() {
         if(isnum){
             localStorage["semester"] = form.semester.value;
         }
-        else
+        else if(form.semester.value != '')
             alert("Du kannst als Semester nur eine natürliche Zahl eingeben");
         if(form.interests.value != '') localStorage["interests"] = form.interests.value;
     } catch (e) {
